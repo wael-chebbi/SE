@@ -6,25 +6,25 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-/** classe principale lancant les processus philosophes*/
+/classe principale lancant les processus philosophes*/
 public class LeDiner extends JFrame implements ActionListener {
 
-	/** nb de philosophes*/
-	int nbPhilo;
-	/** panneau contenant les objets graphiques (labels, ...)*/
+	/nb de philosophes*/
+	intnbPhilo;
+	/ panneau contenant les objets graphiques (labels, ...)*/
 	JPanel panneau;
-	/** tableau de labels representant les philosophes */
+	/tableau de labels representant les philosophes */
 	JLabel[] lblPhilos;
-	/** tableau de cases a cocher representant les fourchettes*/
+	/tableau de cases a cocher representant les fourchettes*/
 	JCheckBox[] cbFourchettes;
-	/** tableau de couleurs a associer aux philosophes */
+	/tableau de couleurs a associer aux philosophes */
 	final static Color[] tabCouleurs = {Color.BLACK, Color.BLUE, Color.RED, Color.GRAY, Color.GREEN};
-	/** lien vers la gestion des fourchettes*/
+	/lien vers la gestion des fourchettes*/
 	Fourchettes ustensiles;
-	/** tableau de Philosophes*/
+	/tableau de Philosophes*/
 	Philosophe[] convives;
 	
-	/** initialisation du diner avec 5 philosophes par defaut*/
+	/initialisation du diner avec 5 philosophes par defaut*/
 	LeDiner() 
 	{
 		nbPhilo = 5;
@@ -39,9 +39,9 @@ public class LeDiner extends JFrame implements ActionListener {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
-	/** initialisation du diner avec nb philosophes en parametre 
-	 * @param _nom Nom de la fenetre
-	 * @param _nbPhilo nb de philosophes */
+	/ initialisation du diner avec nb philosophes en parametre 
+	  @param _nom Nom de la fenetre
+	  @param _nbPhilo nb de philosophes */
 	LeDiner(String _nom, int _nbPhilo) 
 	{
 		super(_nom);
@@ -57,7 +57,7 @@ public class LeDiner extends JFrame implements ActionListener {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
-	/** initialisaion du panneau (construction et positionnement des labels, des cases a cocher...)*/
+	/ initialisaion du panneau (construction et positionnement des labels, des cases a cocher...)/
 	void initPanneau()
 	{
 		panneau.setLayout(new GridLayout(0, 2));
@@ -73,10 +73,8 @@ public class LeDiner extends JFrame implements ActionListener {
 		JButton jbGo = new JButton("go");
 		jbGo.addActionListener(this);
 		panneau.add(jbGo);
-	}
-
-	/** fonction lancee suite a l'activation du bouton Go...<br>
-	 * cree les philosophes et les "lance"*/
+	}fonction lancee suite a l'activation du bouton Go...<br>
+	 cree les philosophes et les "lance"*/
 	void go()
 	{
 		for(int i=0; i<nbPhilo; i++)
@@ -85,9 +83,9 @@ public class LeDiner extends JFrame implements ActionListener {
 			convives[i].start();
 	}
 
-	/** fonction lancee par un philo pour indiquer qu'il mange
-	 * @param no no du philosophe lancant la fonction
-	 * @param nbBouchees nb de bouchees restant a manger pour le philosope lancant la fonction*/
+	/fonction lancee par un philo pour indiquer qu'il mange
+	 @param no no du philosophe lancant la fonction
+	 @param nbBouchees nb de bouchees restant a manger pour le philosope lancant la fonction*/
 	public void manger(int no, int nbBouchees)
 	{
 		Color couleur = tabCouleurs[no];
@@ -100,8 +98,8 @@ public class LeDiner extends JFrame implements ActionListener {
 		this.repaint();
 	}
 
-	/** fonction lancee par un philo pour indiquer qu'il pense
-	 * @param no no du philosophe lancant la fonction */
+	/ fonction lancee par un philo pour indiquer qu'il pense
+	  @param no no du philosophe lancant la fonction */
 	public void penser(int no)
 	{
 		Color couleur = tabCouleurs[no];
@@ -113,8 +111,8 @@ public class LeDiner extends JFrame implements ActionListener {
 		this.repaint();
 	}
 
-	/** fonction lancee par un philo pour indiquer qu'il attend
-	 * @param no no du philosophe lancant la fonction */
+	/fonction lancee par un philo pour indiquer qu'il attend
+	 @param no no du philosophe lancant la fonction */
 	public void penserEtAttendre(int no)
 	{
 		Color couleur = tabCouleurs[no];
@@ -126,8 +124,8 @@ public class LeDiner extends JFrame implements ActionListener {
 		this.repaint();
 	}
 
-	/** fonction lancee par un philo pour indiquer qu'il a fini
-	 * @param no no du philosophe lancant la fonction */
+	/fonction lancee par un philo pour indiquer qu'il a fini
+	  @param no no du philosophe lancant la fonction /
 	public void finir(int no)
 	{
 		Color couleur = tabCouleurs[no];
@@ -139,8 +137,8 @@ public class LeDiner extends JFrame implements ActionListener {
 		this.repaint();
 	}
 
-	/** evenement declenche par l'action sur le bouton go<br>
-	 * lance la fonction go */
+	/evenement declenche par l'action sur le bouton go<br>
+	  lance la fonction go /
 	public void actionPerformed(ActionEvent event) {
 		String nomEvent = event.getActionCommand();
 		// verification du texte sur l'objet declenchant l'evenement

@@ -14,18 +14,18 @@ public class VMsim
 
 	private BufferedReader r = null;
 
-	private int nextFrameNumber;		/* the next available frame number */
-	private int nextTLBEntry;		/* the next available entry in the TLB */
+	private int nextFrameNumber;		
+	private int nextTLBEntry;		
 
-	private PageTableEntry[] pageTable;	/* the page table */
-	private Frame[] physicalMemory;		/* physical memory (organized in frames) */
-	private TLBEntry[] TLB;			/* the TLB */
+	private PageTableEntry[] pageTable;
+	private Frame[] physicalMemory;		
+	private TLBEntry[] TLB;			
 
-	private int pageFaults;			/* the number of page faults */
-	private int TLBHits;			/* the number of TLB hits */
-	private int numberOfAddresses;		/* the number of addresses that were translated */
+	private int pageFaults;			
+	private int TLBHits;		
+	private int numberOfAddresses;		
 
-	/ 
+	
 	  Constructor.
 	 
 	  Creates and intiailizes the various data structures including:
@@ -33,7 +33,7 @@ public class VMsim
 	  (1) Page table, only the lower PAGE_TABLE_ENTRIES/2 pages are valid
 	  (2) TLB
 	 (3) Physical memory
-	 /
+	 
 	public VMsim() {
 
 		pageTable = new PageTableEntry[PAGE_TABLE_ENTRIES];

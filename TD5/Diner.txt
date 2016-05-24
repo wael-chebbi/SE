@@ -146,7 +146,7 @@ public class LeDiner extends JFrame implements ActionListener {
 			go();		
 	}
 
-	/** fonction principale, cree un diner et l'affiche*/
+	/** fonction principale, cree un diner et l'affiche/
 	public static void main(String[] args)
 	{
 		LeDiner ld = new LeDiner("coucou", 5);

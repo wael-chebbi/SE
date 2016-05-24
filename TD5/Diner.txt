@@ -4,27 +4,27 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.;
 
-/classe principale lancant les processus philosophes*/
+/classe principale lancant les processus philosophes
 public class LeDiner extends JFrame implements ActionListener {
 
-	/nb de philosophes*/
-	intnbPhilo;
-	/ panneau contenant les objets graphiques (labels, ...)*/
+	/nb de philosophes/
+	intnbPhilo
+	/ panneau contenant les objets graphiques (labels, ...)
 	JPanel panneau;
-	/tableau de labels representant les philosophes */
+	/tableau de labels representant les philosophes
 	JLabel[] lblPhilos;
-	/tableau de cases a cocher representant les fourchettes*/
+	/tableau de cases a cocher representant les fourchettes
 	JCheckBox[] cbFourchettes;
-	/tableau de couleurs a associer aux philosophes */
+	/tableau de couleurs a associer aux philosophes 
 	final static Color[] tabCouleurs = {Color.BLACK, Color.BLUE, Color.RED, Color.GRAY, Color.GREEN};
-	/lien vers la gestion des fourchettes*/
+	/lien vers la gestion des fourchettes
 	Fourchettes ustensiles;
-	/tableau de Philosophes*/
+	/tableau de Philosophes
 	Philosophe[] convives;
 	
-	/initialisation du diner avec 5 philosophes par defaut*/
+	/initialisation du diner avec 5 philosophes par defaut
 	LeDiner() 
 	{
 		nbPhilo = 5;
@@ -41,7 +41,7 @@ public class LeDiner extends JFrame implements ActionListener {
 
 	/ initialisation du diner avec nb philosophes en parametre 
 	  @param _nom Nom de la fenetre
-	  @param _nbPhilo nb de philosophes */
+	  @param _nbPhilo nb de philosophes /
 	LeDiner(String _nom, int _nbPhilo) 
 	{
 		super(_nom);
@@ -74,7 +74,7 @@ public class LeDiner extends JFrame implements ActionListener {
 		jbGo.addActionListener(this);
 		panneau.add(jbGo);
 	}fonction lancee suite a l'activation du bouton Go...<br>
-	 cree les philosophes et les "lance"*/
+	 cree les philosophes et les "lance"
 	void go()
 	{
 		for(int i=0; i<nbPhilo; i++)
@@ -99,7 +99,7 @@ public class LeDiner extends JFrame implements ActionListener {
 	}
 
 	/ fonction lancee par un philo pour indiquer qu'il pense
-	  @param no no du philosophe lancant la fonction */
+	  @param no no du philosophe lancant la fonction 
 	public void penser(int no)
 	{
 		Color couleur = tabCouleurs[no];
@@ -112,7 +112,7 @@ public class LeDiner extends JFrame implements ActionListener {
 	}
 
 	/fonction lancee par un philo pour indiquer qu'il attend
-	 @param no no du philosophe lancant la fonction */
+	 @param no no du philosophe lancant la fonction
 	public void penserEtAttendre(int no)
 	{
 		Color couleur = tabCouleurs[no];
@@ -146,7 +146,7 @@ public class LeDiner extends JFrame implements ActionListener {
 			go();		
 	}
 
-	/** fonction principale, cree un diner et l'affiche/
+	 fonction principale, cree un diner et l'affiche/
 	public static void main(String[] args)
 	{
 		LeDiner ld = new LeDiner("coucou", 5);

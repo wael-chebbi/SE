@@ -1,28 +1,26 @@
-/**
- * classe representant un Philosophe dans le diner des Philosophes.<br> n philosophes sont assis autour d'une table et mangent des spagethis.<br> Pour manger, un philosophe a besoin de deux fourchettes.<br> Cependant il n'y a que 5 fourchettes, les philosophes alternent donc entre manger  quand ils ont leurs fourchettes et penser quand ils attendent.
- */
+Classe representant un Philosophe dans le diner des Philosophes.<br> n philosophes sont assis autour d'une table et mangent des spagethis.<br> Pour manger, un philosophe a besoin de deux fourchettes.<br> Cependant il n'y a que 5 fourchettes, les philosophes alternent donc entre manger  quand ils ont leurs fourchettes et penser quand ils attendent.
+
 public class Philosophe extends Thread {
-	/** no du philosophe */
+no du philosophe */
 	int no;
-	/** nb de bouchees restantes dans l'assiette */
+nb de bouchees restantes dans l'assiette
 	int nbBouchees;
-	/** stoppe le processus s'il a fini son assiette */
+ stoppe le processus s'il a fini son assiette 
 	boolean fini;
-	/** date de debut du diner */
 	long debut;
-	/** liste de fourchettes */
+	 liste de fourchettes 
 	Fourchettes lesFourchettes;
-	/** lien vers la JFrame pour mise a jour de l'affichage*/
+	lien vers la JFrame pour mise a jour de l'affichage*/
 	LeDiner laTable;
 	
 	
-	/** initialise fini a true*/	
+	initialise fini a true	
 	Philosophe()
 	{
 		fini = true;
 	}
 	
-	/** initialise le no et nb de bouchees */
+	 initialise le no et nb de bouchees 
 	Philosophe(int _no, int _nbBouchees, Fourchettes _lesFourchettes, LeDiner _laTable)
 	{
 		no = _no;
@@ -32,12 +30,11 @@ public class Philosophe extends Thread {
 		laTable = _laTable;
 	}
 	
-	/** fonction principale du philosophe : cycle sur manger, penser.
-	 * Pour manger, il prend la fourchette de droite et celle de gauche.
-	 * Donc i prend la fourchette i et i+1.<br>
-	 * Le philosophe garde les fourchettes un certains temps et les depose ensuite<br>
-	 * la boucle se termine lorsque le philosophe a termine ses bouchees.
-	 * */
+	 fonction principale du philosophe : cycle sur manger, penser.
+	  Pour manger, il prend la fourchette de droite et celle de gauche.
+	  Donc i prend la fourchette i et i+1.<br>
+	  Le philosophe garde les fourchettes un certains temps et les depose ensuite<br>
+	  la boucle se termine lorsque le philosophe a termine ses bouchees.
 	public void run()
 	{
 		debut = System.currentTimeMillis();
